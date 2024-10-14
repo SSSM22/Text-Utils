@@ -5,10 +5,12 @@ export default function TextForm(props) {
         // console.log("Uppercase was clicked"+text);
         let newText=text.toUpperCase();
         setText(newText);
+        props.showAlert("success","Converted to Uppercase");
     }
     const handleDownClick=()=>{
         let t=text.toLowerCase();
         setText(t);
+        props.showAlert("success","Converted to Lowercase");
     }
     const handleOnChange=(event)=>{
     // console.log("On change");
@@ -31,6 +33,7 @@ export default function TextForm(props) {
                     str[i] =  String.fromCharCode(str[i].charCodeAt(0) + 'A'.charCodeAt(0) - 'a'.charCodeAt(0));
             }
         setText(str.join(''));
+        props.showAlert("success","Converted to Toggle Case");
     } 
     const toggleSpeak=()=>{
         let msg=new SpeechSynthesisUtterance();
@@ -44,7 +47,7 @@ export default function TextForm(props) {
         <div className='container my-4'>
             <div className="mb-3">
             <h1>{props.heading}</h1>
-            <textarea className="form-control" style={{backgroundColor:props.mode==='light'?'white':'#042743'}}value={text} onChange={handleOnChange} id="mybox" rows="6"></textarea>
+            <textarea className="form-control" style={{backgroundColor:props.mode==='light'?'white':'#042743', color:props.mode==='light'?'black':'white'}}value={text} onChange={handleOnChange} id="mybox" rows="6"></textarea>
             </div>
             <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
             <button className="btn btn-primary mx-1" onClick={handleDownClick}>Convert to Lowercase</button>
