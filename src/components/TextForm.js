@@ -40,6 +40,11 @@ export default function TextForm(props) {
         msg.text=text;
         window.speechSynthesis.speak(msg);
     }
+    const wordCount = (text)=>{
+        let regex = /\s+\S+/;
+        let numOfWords = text.split(regex);
+        return numOfWords.length;
+      }
     const[text,setText]=useState("");
     return (
     <>
@@ -58,7 +63,7 @@ export default function TextForm(props) {
         </div>
         <div className="container my-3"  >
             <h2>Text Summary+{props.mode}</h2>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
+            <p>{text===""?0:wordCount(text)} words and {text.length} characters</p>
             <h3>Estimated Time to read</h3>
             <p>{0.008 * text.split(" ").length} Minutes read</p>
             <h3>Preview</h3>
