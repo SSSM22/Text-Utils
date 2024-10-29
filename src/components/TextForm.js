@@ -54,12 +54,12 @@ export default function TextForm(props) {
             <h1>{props.heading}</h1>
             <textarea className="form-control" style={{backgroundColor:props.mode==='light'?'white':'#042743', color:props.mode==='light'?'black':'white'}}value={text} onChange={handleOnChange} id="mybox" rows="6"></textarea>
             </div>
-            <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-primary mx-1" onClick={handleDownClick}>Convert to Lowercase</button>
-            <button className="btn btn-primary mx-1" onClick={handleClear}>Clear Text</button>
-            <button className="btn btn-primary mx-1" onClick={handleCopy}>Copy Text</button>
-            <button className='btn btn-primary mx-1' onClick={handleToggle}>Toggle</button>
-            <button className='btn btn-warning  mx-1' onClick={toggleSpeak}>Speak</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleDownClick}>Convert to Lowercase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear Text</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
+            <button className='btn btn-primary mx-1 my-1' onClick={handleToggle}>Toggle</button>
+            <button className='btn btn-warning  mx-1 my-1' onClick={toggleSpeak}>Speak</button>
         </div>
         <div className="container my-3"  >
             <h2>Text Summary+{props.mode}</h2>
